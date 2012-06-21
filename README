@@ -1,0 +1,18 @@
+@2012 Jackie Aldama
+
+This is a quick attempt at building my knowledge of Perl and parsing a Nagios logfile. There is a lot of work to be done and things to consider to be able to move this into production. This code was written as an intern in the Spring/Summer of 2012 but the project was put on hold as the office use of Nagios couldn't provide reliable data to be able to parse the logfiles easily. 
+
+Questions that came up:
+-Determining the uptime percentage:
+	1.Uptime per month? 
+	2.As a correlation between number of active services/hosts, time period, total down time of
+	those hosts/services
+	3.Does Nagios have a host for every service, if so, we should only be looking at one or the
+	other?
+##At this moment the code just sums up the total time so far in the current month and compares that with the total amount of 'downtime'
+
+-What about if more than one service goes down at the same time, or their down time coincides with another service's downtime?
+-Maintenance Windows?
+-Publicly visible downtimes vs Internal doesn't-matter-as-much-stuff
+
+Output is an html template. Interested in experimenting with other graphing technologies.
